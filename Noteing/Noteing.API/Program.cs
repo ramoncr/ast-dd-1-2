@@ -13,7 +13,7 @@ using Noteing.API.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // This shouldn't be seen by anyone.
-// Good that you guys are joining tonight! The secrets for today is YLD{Welkom2024!Secr3t}
+// Good that you guys are joining tonight! The secrets for today is ******************
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("ConnString");

@@ -29,13 +29,11 @@ namespace Noteing.API.Controllers
             if (string.IsNullOrEmpty(googleMapsRequestModel.Body))
             {
                 var response = await httpClient.GetAsync(path);
-                response.EnsureSuccessStatusCode();
                 return Ok(response.Content.ReadAsStringAsync());
             }
             else
             {
                 var response = await httpClient.PostAsync(path, new StringContent(googleMapsRequestModel.Body));
-                response.EnsureSuccessStatusCode();
                 return Ok(response.Content.ReadAsStringAsync());
             }
         }

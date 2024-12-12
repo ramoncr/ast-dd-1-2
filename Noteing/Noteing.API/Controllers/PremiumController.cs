@@ -20,7 +20,7 @@ namespace Noteing.API.Controllers
             _dbContext = dbContext;
         }
 
-        [HttpGet("summary/{nodeId:guid}")]
+        [HttpGet("summary/{noteId:guid}")]
         public IActionResult Summarize(Guid noteId, [FromQuery] string type)
         {
             var result = _dbContext.Notes.First(x => x.Id == noteId);

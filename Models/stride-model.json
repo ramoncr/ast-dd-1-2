@@ -65,8 +65,8 @@
                 "text": "API"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -80,52 +80,12 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": true,
               "privilegeLevel": "",
-              "threats": [
-                {
-                  "id": "92db1dc1-3ebf-42af-9fa4-95c572402508",
-                  "title": "Unauthenticated access to endpoints",
-                  "status": "Mitigated",
-                  "severity": "High",
-                  "type": "Tampering",
-                  "description": "A attacker can get access to endpoints that can manipulate notes from other users.",
-                  "mitigation": "By default require authentication on all endpoints. Create motivated exceptions for endpoints requiring public access.",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 6,
-                  "score": ""
-                },
-                {
-                  "id": "2ffbf939-3e05-4d97-af16-ca67a25e9c91",
-                  "title": "User impersonation by adjusted JWTs",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Spoofing",
-                  "description": "A malicious actor can act like a different users by modifying the contents of a JWT, or use outdated tokens.",
-                  "mitigation": "Ensure the signature, issuer, expiration, audience and required claims are properly set.",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 7,
-                  "score": ""
-                },
-                {
-                  "id": "84172164-68ea-401d-bddd-9ecb5541b4be",
-                  "title": "(D)DOS",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Denial of service",
-                  "description": "A attacker can create a massive number of request on our endpoints, which can result in degraded performance of the API or even down time.",
-                  "mitigation": "This is currently a accepted risk. The required means to properly provide defense against such attack outweigh the impact of down time for the API.",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 8,
-                  "score": ""
-                }
-              ]
+              "threats": []
             }
           },
           {
@@ -220,13 +180,11 @@
                 "text": "Database"
               },
               "topLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -240,40 +198,13 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": [
-                {
-                  "id": "a4442e62-bd5d-44b9-9066-91aadeb10691",
-                  "title": "Unauthorised access",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Information disclosure",
-                  "description": "An attacker could make an query call on the DB",
-                  "mitigation": "Require all queries to be authenticated.",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 4,
-                  "score": ""
-                },
-                {
-                  "id": "fadfed7f-37bc-41d5-8b5a-9e8651768398",
-                  "title": "Credential theft",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Information disclosure",
-                  "description": "An attacker could obtain the DB credentials ans use them to make unauthorised queries.",
-                  "mitigation": "Use a firewall to restrict access to the DB to only the Background Worker IP address.",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 5,
-                  "score": ""
-                }
-              ]
+              "threats": []
             }
           },
           {
@@ -421,21 +352,7 @@
               "isEncrypted": false,
               "isPublicNetwork": true,
               "protocol": "",
-              "threats": [
-                {
-                  "id": "1c41eeb9-64d2-434e-972c-697688a10220",
-                  "title": "Requests should use HTTPS",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Information disclosure",
-                  "description": "Requests might be intercepted and read by attackers. ",
-                  "mitigation": "Utilize HTTPS, to ensure a secure connection between the client and the API",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 1,
-                  "score": ""
-                }
-              ]
+              "threats": []
             },
             "id": "c106e614-32ff-45c8-88a0-e5e3c11685d1",
             "source": {
@@ -531,21 +448,7 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [
-                {
-                  "id": "6b8b561c-67a3-4ea8-bb6c-d1eaf583a932",
-                  "title": "Sockets should go via a secure connection",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Information disclosure",
-                  "description": "The websocket connections can be potentially intercepted when it does not go over a secure connection.",
-                  "mitigation": "Ensure sockets are only create using a secure connection",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 2,
-                  "score": ""
-                }
-              ]
+              "threats": []
             },
             "id": "bd0c2ebb-d566-44ae-9d77-d2776c563533",
             "source": {
@@ -828,101 +731,6 @@
             "labels": [
               "Send emails"
             ]
-          },
-          {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "id": "a5ff9d92-59cc-4ff6-b70c-539d1291b8f6",
-            "source": {
-              "x": 470,
-              "y": 10
-            },
-            "target": {
-              "x": 290,
-              "y": 290
-            },
-            "vertices": [
-              {
-                "x": 470,
-                "y": 210
-              }
-            ]
-          },
-          {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "id": "266a150e-e94c-4242-8097-57121b8eefce",
-            "source": {
-              "x": 910,
-              "y": 10
-            },
-            "target": {
-              "x": 1110,
-              "y": 320
-            },
-            "vertices": [
-              {
-                "x": 910,
-                "y": 290
-              }
-            ]
-          },
-          {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "id": "465c5bf0-4cec-4c5e-8d2d-a184752c29f1",
-            "source": {
-              "x": 660,
-              "y": 460
-            },
-            "target": {
-              "x": 970,
-              "y": 470
-            },
-            "vertices": [
-              {
-                "x": 740,
-                "y": 340
-              },
-              {
-                "x": 880,
-                "y": 340
-              },
-              {
-                "x": 940,
-                "y": 390
-              }
-            ]
           }
         ],
         "description": "STRIDE DESC"
@@ -930,6 +738,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Trainees",
-    "threatTop": 8
+    "threatTop": 0
   }
 }
